@@ -65,42 +65,38 @@ const FormComponent = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="form-container">
-        <h1 style={{ color: 'white', marginLeft: '9px' }}>Form</h1>
-        <label style={{ color: 'white' }}>
+      <form onSubmit={handleSubmit} className="form-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+        <h1 style={{ color: 'white', marginLeft: '70px' }}>Enter the Details</h1>
+        <label style={{ color: 'white', marginBottom: '10px', marginLeft: '90px'  }}>
           Name:
-          <input type="text" name="name" value={formData.name} onChange={handleChange} />
+          <input type="text" name="name" value={formData.name} onChange={handleChange} pattern="[A-Za-z]+" title="Please enter only letters" required />
         </label>
-        <br />
-        <br />
-        <label style={{ color: 'white' }}>
+        <label style={{ color: 'white', marginBottom: '10px', marginLeft: '90px' }}>
           Gender:
-          <select name="gender" value={formData.gender} onChange={handleChange}>
+          <select name="gender" value={formData.gender} onChange={handleChange} required>
+          <option value="select">Select</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Others">Others</option>
           </select>
         </label>
-
-        <br></br>
-        <br></br>
-        <label style={{ color: 'white' }}>
+        <label style={{ color: 'white', marginBottom: '10px', marginLeft: '90px' }}>
           Ratio:
-          <input type="text" name="ratio" value={formData.ratio} onChange={handleChange} />
+          <input type="number" name="ratio" value={formData.ratio} onChange={handleChange} step="0.01" required/>
+
         </label>
-        <br></br>
-        <br></br>
-        <label style={{ color: 'white' }}>
+        <label style={{ color: 'white', marginBottom: '10px', marginLeft: '90px' }}>
           DOB:
-          <input type="date" name="dob" value={formData.dob} onChange={handleChange} />
+          <input type="date" name="dob" value={formData.dob} onChange={handleChange} required />
         </label>
-        <br></br>
-        <br></br>
-        <button type="submit">Submit</button>
-        <button type="button" onClick={handleExit} style={{ marginLeft: '50px' }}>
-          Clear
-        </button>
+        <div style={{ marginTop: '10px', marginLeft: '130px' }}>
+          <button type="submit">Add</button>
+          <button type="button" onClick={handleExit} style={{ marginLeft: '10px' }}>
+            Clear
+          </button>
+        </div>
       </form>
+
 
       {submittedData.length > 0 && (
         <table style={{ borderCollapse: 'collapse', border: '1px solid black', marginLeft: '10px' }}>
