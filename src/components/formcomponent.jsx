@@ -13,9 +13,10 @@ const FormComponent = () => {
   const [editRowIndex, setEditRowIndex] = useState(null);
 
   const handleChange = (e) => {
-    const { name, value, type } = e.target;
-    setFormData({ ...formData, [name]: type === 'checkbox' ? e.target.checked : value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
+  
   
 
   const handleEdit = (index) => {
@@ -69,7 +70,7 @@ const FormComponent = () => {
         <h1 style={{ color: 'white', marginLeft: '70px' }}>Enter the Details</h1>
         <label style={{ color: 'white', marginBottom: '10px', marginLeft: '90px'  }}>
           Name:
-          <input type="text" name="name" value={formData.name} onChange={handleChange} pattern="[A-Za-z]+" title="Please enter only letters" required />
+          <input type="text" name="name" value={formData.name} onChange={handleChange}  pattern="[A-Za-z ]+" title="Please enter only letters" required />
         </label>
         <label style={{ color: 'white', marginBottom: '10px', marginLeft: '90px' }}>
           Gender:
