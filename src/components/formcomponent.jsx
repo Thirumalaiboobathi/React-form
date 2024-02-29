@@ -67,12 +67,12 @@ const FormComponent = () => {
   return (
     <div>
       <form onSubmit={handleSubmit} className="form-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-        <h1 style={{ color: 'white', marginLeft: '70px' }}>Enter the Details</h1>
-        <label style={{ color: 'white', marginBottom: '10px', marginLeft: '90px'  }}>
+        <h1 style={{ color: 'white' }}>Enter the Details</h1>
+        <label style={{ color: 'white', marginBottom: '10px'  }}>
           Name:
           <input type="text" name="name" value={formData.name} onChange={handleChange}  pattern="[A-Za-z ]+" title="Please enter only letters" required />
         </label>
-        <label style={{ color: 'white', marginBottom: '10px', marginLeft: '90px' }}>
+        <label style={{ color: 'white', marginBottom: '10px' }}>
           Gender:
           <select name="gender" value={formData.gender} onChange={handleChange} required>
           <option value="select">Select</option>
@@ -81,12 +81,12 @@ const FormComponent = () => {
             <option value="Others">Others</option>
           </select>
         </label>
-        <label style={{ color: 'white', marginBottom: '10px', marginLeft: '90px' }}>
+        <label style={{ color: 'white', marginBottom: '10px'}}>
           Ratio:
           <input type="number" name="ratio" value={formData.ratio} onChange={handleChange} step="0.01" required/>
 
         </label>
-        <label style={{ color: 'white', marginBottom: '10px', marginLeft: '90px' }}>
+        <label style={{ color: 'white', marginBottom: '10px'}}>
           DOB:
           <input type="date" name="dob" value={formData.dob} onChange={handleChange} required />
         </label>
